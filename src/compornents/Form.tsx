@@ -5,28 +5,26 @@ type FormProps = {
 }
 
 export default function Form({ addTask }: FormProps) {
-  const [name, setName] = React.useState<string>("")
+  const [name, setName] = React.useState("")
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value)
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setName(e.target.value)
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    addTask(name)
-    setName("")
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    // 追加ボタンを押したときの処理
+    // tasksにinputを押した時に入力されている値を追加する処理
+    // inputタグのvalueを空にする処理
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <input
-        value={name}
         type="text"
         onChange={handleChange}
         placeholder="todoを入力してください"
       />
-      <button type="submit">追加</button>
+      <input type="submit" value="追加" />
     </form>
   )
 }

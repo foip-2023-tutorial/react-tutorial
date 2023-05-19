@@ -1,6 +1,4 @@
 import React, { useState } from "react"
-import { nanoid } from "nanoid"
-import "./App.css"
 import Todo from "./compornents/Todo"
 import Form from "./compornents/Form"
 
@@ -11,52 +9,29 @@ type TodoType = {
 }
 
 function App() {
-  const [tasks, setTasks] = useState<TodoType[]>([])
+  //  タスクの配列,とstateを更新する関数をuseStateで作成
 
-  const addTask = (name: string) => {
-    const newTask = { id: `todo-${nanoid()}`, name, completed: false }
-    setTasks([...tasks, newTask])
+  function addTask(name: string) {
+    //  タスクの配列に新しいタスクを追加する処理
   }
 
-  const toggleTaskCompleted = (id: string) => {
-    const updatedTasks = tasks.map((task) => {
-      if (id === task.id) {
-        return { ...task, completed: !task.completed }
-      }
-      return task
-    })
-    setTasks(updatedTasks)
-  }
-
-  const deleteTask = (id: string) => {
-    const remainingTasks = tasks.filter((task) => task.id !== id)
-    setTasks(remainingTasks)
-  }
-
-  const editTaskName = (id: string, newName: string) => {
-    const editedTaskList = tasks.map((task) => {
-      if (id === task.id) {
-        return { ...task, name: newName }
-      }
-      return task
-    })
-    setTasks(editedTaskList)
+  function deleteTask(id: string) {
+    //  タスクの配列の中からidが一致するものを削除する処理
   }
 
   return (
     <div className="App">
       <h1>Todoリスト</h1>
       <Form addTask={addTask} />
-      {tasks.map((todo: TodoType) => (
-        <Todo
-          id={todo.id}
-          name={todo.name}
-          completed={todo.completed}
-          toggleTaskCompleted={toggleTaskCompleted}
-          deleteTask={deleteTask}
-          editTaskName={editTaskName}
-        />
-      ))}
+      {/* tasksにあるタスクの集合をすべて表示させる処理（配列操作を用いて） */}
+      <Todo
+        name="掃除"
+        completed={false}
+        id="1"
+        deleteTask={() => {
+          deleteTask("")
+        }}
+      />
     </div>
   )
 }
