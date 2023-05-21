@@ -17,7 +17,7 @@ export default function Todo({
   return (
     <li>
       <span>{name}</span>
-      <button onChange={() => deleteTask("")}>削除</button>
+      <button onClick={() => deleteTask("")}>削除</button>
     </li>
   )
 }

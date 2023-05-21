@@ -23,6 +23,7 @@ export default function Form({ addTask }: FormProps) {
         type="text"
         onChange={handleChange}
         placeholder="todoを入力してください"
+        value={name}
       />
       <input type="submit" value="追加" />
     </form>
