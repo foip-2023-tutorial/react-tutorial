@@ -27,7 +27,7 @@ function App() {
     // 2-2　newTaskのidはnanoidを使って、ランダムな文字列を生成する. id = nanoid()
     // 2-3　newTaskのnameは引数に取っているnameをそのまま使う.
     // 2-4　newTaskのcompletedはfalseを使う.
-    // 2.5  useStateで作成したstateを更新する関数を使って、タスクの配列を更新する　stateの配列の更新はp359ページ参考
+    // 2.5  useStateで作成したstateを更新する関数を使って、タスクの配列を更新する　stateの配列の更新はp48ページ参考
   }
 
   function deleteTask(id: string) {
@@ -46,7 +46,7 @@ function App() {
         // 4. App.tsxでtasksにある配列をすべて表示させる処理を実装する
         // 4-1　配列の中身をすべて表示させるために、mapを使う
         // 4-2　mapの中身は、Todoコンポーネントを使う
-        // 4-3　Todoコンポーネントには、id, name, completed, deleteTaskをpropsとして渡す　mapの使い方はp361を参考にする
+        // 4-3　Todoコンポーネントには、id, name, completed, deleteTaskをpropsとして渡す　mapの使い方はp49を参考にする
         // 4.4 return内にある見本の<Todo id={task.id} name={task.name} completed={task.completed} deleteTask={deleteTask}/>を削除する
         //　ここまで来たら一度サイトを開いて確認してみよう
         // タスクが追加できるようになっていたらOK
